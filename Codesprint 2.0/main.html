@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="main.css">
   <title>Kishan Mitra — Crop Advisor</title>
+  
 </head>
 <body>
   <div class="app">
@@ -64,31 +65,21 @@
           </div>
 
           <hr style="margin:14px 0;border:none;border-top:1px dashed #eee">
-          <div>
-            <label>Voice Language</label>
-            <select id="langSelect">
-              <option value="en-IN">English (India)</option>
-              <option value="hi-IN" selected>हिन्दी (Hindi)</option>
-              <option value="mr-IN">मराठी (Marathi)</option>
-              <option value="ta-IN">தமிழ் (Tamil)</option>
-              <option value="te-IN">తెలుగు (Telugu)</option>
-              <option value="bn-IN">বাংলা (Bengali)</option>
-              <option value="kn-IN">ಕನ್ನಡ (Kannada)</option>
-            </select>
-          </div>
 
-          <div style="margin-top:12px" class="voiceBox">
-            <div class="mic pulse" id="micBtn">🎙️</div>
-            <div style="flex:1">
-              <div style="font-weight:700">Voice Assistant</div>
-              <div class="muted">Tap mic, speak in your language. Assistant replies in text & voice.</div>
-            </div>
-            <div style="min-width:120px;text-align:right">
-              <div class="muted">Status</div>
-              <div id="voiceStatus">Idle</div>
-            </div>
-          </div>
+          <label>Voice Language</label>
+          <select id="langSelect" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-top:6px">
+            <option value="hi-IN" selected>हिन्दी (Hindi)</option>
+            <option value="en-IN">English (India)</option>
+            <option value="mr-IN">मराठी (Marathi)</option>
+            <option value="ta-IN">தமிழ் (Tamil)</option>
+            <option value="te-IN">తెలుగు (Telugu)</option>
+            <option value="bn-IN">বাংলা (Bengali)</option>
+            <option value="kn-IN">ಕನ್ನಡ (Kannada)</option>
+          </select>
 
+          <div style="margin-top:10px;color:var(--muted);font-size:13px">
+            Tip: Tap the mic (bottom-right), speak in your local language. Say numeric values (e.g., “नाइट्रोजन 40, फॉस्फोरस 20, पोटाश 30, पीएच 6.5”) or ask “कौन सी फसल?” to analyze.
+          </div>
         </div>
 
         <div class="card" style="margin-top:12px">
@@ -159,6 +150,12 @@
       Built with ❤️ for farmers • Kishan Mitra prototype • Voice features depend on browser support
     </footer>
   </div>
+
+  <!-- floating mic + status -->
+  <div class="mic-btn" id="micBtn" title="Tap to speak">🎙️</div>
+  <div class="voice-status" id="voiceStatus" aria-live="polite">Idle</div>
   <script src="main.js"></script>
+ 
 </body>
 </html>
+
