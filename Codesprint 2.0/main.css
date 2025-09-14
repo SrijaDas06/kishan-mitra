@@ -1,4 +1,4 @@
- :root{
+:root{
       --bg:#f7fff0;
       --card:#ffffff;
       --accent1:#2e8b57; /* crop green */
@@ -28,9 +28,6 @@
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;font-weight:600;cursor:pointer}
     .btn.secondary{background:transparent;border:1px solid var(--accent1);color:var(--accent1)}
 
-    .voiceBox{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(143,191,224,0.12), rgba(246,200,95,0.06));}
-    .mic{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--accent1),#276b4a);display:flex;align-items:center;justify-content:center;color:white;font-size:22px}
-
     .results{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
     .resultCard{padding:12px;border-radius:10px;background:linear-gradient(180deg,var(--glass),var(--glass-2));border:1px solid rgba(0,0,0,0.04)}
     .resultCard h3{margin:0 0 8px 0}
@@ -41,15 +38,20 @@
 
     footer{margin-top:18px;color:var(--muted);font-size:13px}
 
-    /* responsive */
     @media (max-width:900px){.grid{grid-template-columns:1fr;}.results{grid-template-columns:1fr}}
-
-    /* small animated icons */
-    .pulse{animation:pulse 1.8s infinite}
-    @keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.03);opacity:0.85}100%{transform:scale(1);opacity:1}}
 
     .chip{display:inline-block;padding:6px 8px;border-radius:999px;background:linear-gradient(90deg,var(--accent3),var(--accent1));color:white;font-weight:600;font-size:12px}
 
     .kpi{display:flex;gap:12px;align-items:center}
     .kpi .item{flex:1;padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#f7fff0);}
     .kpi .value{font-weight:700;font-size:18px}
+
+    /* floating mic button */
+    .mic-btn{position:fixed;bottom:20px;right:20px;z-index:999;width:64px;height:64px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;
+      color:white;font-size:28px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,0.2);}
+    .mic-btn.active{animation:pulse 1.6s infinite}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+
+    .voice-status{position:fixed;bottom:100px;right:20px;background:rgba(255,255,255,0.95);padding:8px 12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.08);font-size:14px;color:#234;}
+  
