@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="main.css">
+  <title>Kishan Mitra — Crop Advisor</title>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">
+        <div class="mark">KM</div>
+        <div>
+          <h1>Kishan Mitra</h1>
+          <p class="lead">AI-driven crop recommendations • Multilingual Voice Assistant • Real-time soil sensing</p>
+        </div>
+      </div>
+      <div style="margin-left:auto" class="chip">Prototype</div>
+    </header>
+
+    <div class="grid">
+      <!-- left: controls -->
+      <div>
+        <div class="card controls">
+          <h2 style="margin-top:0">Crop & Soil Inputs</h2>
+          <div style="margin-top:10px">
+            <label>State</label>
+            <select id="stateSelect"></select>
+          </div>
+          <div style="margin-top:10px">
+            <label>District</label>
+            <select id="districtSelect"></select>
+          </div>
+          <div style="margin-top:10px">
+            <label>Month</label>
+            <select id="monthSelect"></select>
+          </div>
+
+          <div style="margin-top:12px" class="row">
+            <div class="half">
+              <label>N (Nitrogen) - kg/ha</label>
+              <input id="nVal" type="number" value="80" />
+            </div>
+            <div class="half">
+              <label>P (Phosphorous) - kg/ha</label>
+              <input id="pVal" type="number" value="30" />
+            </div>
+          </div>
+          <div style="margin-top:12px" class="row">
+            <div class="half">
+              <label>K (Potassium) - kg/ha</label>
+              <input id="kVal" type="number" value="40" />
+            </div>
+            <div class="half">
+              <label>Soil pH</label>
+              <input id="phVal" type="number" step="0.1" value="6.5" />
+            </div>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+            <button class="btn" id="analyzeBtn">Analyze & Recommend</button>
+            <button class="btn secondary" id="clearBtn">Reset</button>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px dashed #eee">
+          <div>
+            <label>Voice Language</label>
+            <select id="langSelect">
+              <option value="en-IN">English (India)</option>
+              <option value="hi-IN" selected>हिन्दी (Hindi)</option>
+              <option value="mr-IN">मराठी (Marathi)</option>
+              <option value="ta-IN">தமிழ் (Tamil)</option>
+              <option value="te-IN">తెలుగు (Telugu)</option>
+              <option value="bn-IN">বাংলা (Bengali)</option>
+              <option value="kn-IN">ಕನ್ನಡ (Kannada)</option>
+            </select>
+          </div>
+
+          <div style="margin-top:12px" class="voiceBox">
+            <div class="mic pulse" id="micBtn">🎙️</div>
+            <div style="flex:1">
+              <div style="font-weight:700">Voice Assistant</div>
+              <div class="muted">Tap mic, speak in your language. Assistant replies in text & voice.</div>
+            </div>
+            <div style="min-width:120px;text-align:right">
+              <div class="muted">Status</div>
+              <div id="voiceStatus">Idle</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin:0">Quick Tips</h3>
+          <ul style="margin-top:8px;color:var(--muted);font-size:13px">
+            <li>Use local language for better recognition.</li>
+            <li>Ensure sensor is placed 10–15 cm deep for accurate readings.</li>
+            <li>Adjust NPK values based on crop lifecycle stage.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- right: results -->
+      <div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <div>
+              <h2 style="margin:0">Recommendations</h2>
+              <div class="muted">Predicted best crops, composts & pest control</div>
+            </div>
+            <div style="text-align:right">
+              <div class="muted">Farm Score</div>
+              <div style="font-size:22px;font-weight:800;color:var(--accent1)" id="farmScore">—</div>
+            </div>
+          </div>
+
+          <div class="results" id="resultsArea">
+            <div class="resultCard">
+              <h3>Top Crops</h3>
+              <div class="muted">Crops suited for selected region & soil</div>
+              <ul id="cropList" style="margin-top:10px"></ul>
+            </div>
+            <div class="resultCard">
+              <h3>Soil & Weather Snapshot</h3>
+              <div class="muted">Latest sensor + typical month data</div>
+              <div style="margin-top:10px" id="snapshot"></div>
+            </div>
+            <div class="resultCard">
+              <h3>Compost Suggestions</h3>
+              <ul id="compostList" class="recommendList"></ul>
+            </div>
+            <div class="resultCard">
+              <h3>Pest & Disease</h3>
+              <ul id="pestList" class="recommendList"></ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3 style="margin:0">Summary</h3>
+            <div class="muted">One-line advice</div>
+          </div>
+          <div id="oneLine" style="margin-top:10px;font-weight:700;font-size:16px">—</div>
+
+          <div class="kpi" style="margin-top:12px">
+            <div class="item"><div class="muted">Expected Yield Uplift</div><div class="value" id="uplift">—</div></div>
+            <div class="item"><div class="muted">Water Saving</div><div class="value" id="waterSave">—</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      Built with ❤️ for farmers • Kishan Mitra prototype • Voice features depend on browser support
+    </footer>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

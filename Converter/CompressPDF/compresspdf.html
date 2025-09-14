@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compress PDF</title>
+  <link rel="stylesheet" href="compresspdf.css">
+</head>
+<body>
+  <div class="mainbox">
+    <div id="subbox">
+      <h1>Welcome to Dev.Workify.PDF</h1>
+      <h2>Compress a PDF</h2>
+
+      <label for="pdfInput" class="drop-container" id="dropcontainer">
+        <span class="drop-title">Drop file here</span> or
+        <input type="file" id="pdfInput" accept="application/pdf">
+      </label>
+
+      <button id="convertBtn">Compress</button>
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <!-- PDF-lib for PDF manipulation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <!-- CompressPDF JS file -->
+  <script src="compresspdf.js"></script>
+</body>
+</html>

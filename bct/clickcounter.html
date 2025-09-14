@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click Counter App</title>
+  <link rel="stylesheet" href="clickcounter.css">
+</head>
+<body>
+  <h1>Click Counter</h1>
+  <p>Button clicked <span id="count">0</span> times</p>
+  <button id="clickBtn">Click Me</button>
+
+  <script>
+    // Initialize counter
+    let count = 0;
+
+    // Select elements
+    const countDisplay = document.getElementById("count");
+    const button = document.getElementById("clickBtn");
+
+    // Add event listener to button
+    button.addEventListener("click", function() {
+      count++;  // Increase the count
+      countDisplay.textContent = count;  // Update display
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#nav {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#nav>h2 {
+    font-size: large;
+    padding: 4px;
+}
+#nav>a {
+    margin-left: auto;
+    text-align: right;
+}
+.header {
+    height: 10vh;
+    width: 100vw;
+    background-color: #73B9DE;
+    
+}
+#heading {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h3 {
+    padding: 20px;
+    padding-left: 25vw;
+    padding-right: 25vw;
+    font-style: italic;
+    color: rgba(33, 33, 33, 0.726);
+    text-align: center;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.cardcontainer {
+    display: flex;
+    flex-direction: column;
+}
+.cardRow1>a {
+    text-decoration: none; /* Ensures no underline on hover */
+}
+.cardRow1 {
+    /* display: grid; */
+    grid-template-columns: 
+        repeat(auto-fit, minmax(250px, 1fr));
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#card1 {
+    border: 5px solid #73B9DE;
+    border-radius: 20px;
+    background: rgba(233, 232, 232, 0.93);
+    padding: 20px;
+    /* margin-left: 60px; */
+    height: 30vh;
+    width: 20vw;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(125, 125, 125, 0.603);
+}
+#card1:hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.03);
+}
+#card1>p {
+    font-size: medium;
+    font-style: italic;
+    color: rgba(33, 33, 33, 0.726);
+    padding-top: 5px;
+}
+#card2 {
+    border: 5px solid #73B9DE;
+    border-radius: 20px;
+    background: rgba(233, 232, 232, 0.93);
+    padding: 20px;
+    /* margin-left: 60px; */
+    height: 30vh;
+    width: 20vw;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(125, 125, 125, 0.603);
+}
+#card2:hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.03);
+}
+#card2>p {
+    font-size: medium;
+    font-style: italic;
+    color: rgba(33, 33, 33, 0.726);
+    padding-top: 5px;
+}
+#card3 {
+    border: 5px solid #73B9DE;
+    border-radius: 20px;
+    background: rgba(233, 232, 232, 0.93);
+    padding: 20px;
+    /* margin-left: 60px; */
+    height: 30vh;
+    width: 20vw;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(125, 125, 125, 0.603);
+}
+#card3>p {
+    font-size: medium;
+    font-style: italic;
+    color: rgba(33, 33, 33, 0.726);
+    padding-top: 5px;
+}
+#card3:hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.03);
+}
+#card4 {
+    border: 5px solid #73B9DE;
+    border-radius: 20px;
+    background: rgba(233, 232, 232, 0.93);
+    padding: 20px;
+    /* margin-left: 60px; */
+    height: 30vh;
+    width: 20vw;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(125, 125, 125, 0.603);
+}
+#card4>p {
+    font-size: medium;
+    font-style: italic;
+    color: rgba(33, 33, 33, 0.726);
+    padding-top: 5px;
+}
+#card4>img {
+    padding-bottom: 4px;
+}
+#card4:hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.03);
+}
+.cardRow2>a {
+    text-decoration: none; /* Ensures no underline on hover */
+}
+
+.cardRow2 {
+    /* display: grid; */
+    grid-template-columns: 
+        repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#card5 {
+    border: 5px solid #73B9DE;
+    border-radius: 20px;
+    background: rgba(233, 232, 232, 0.93);
+    padding: 20px;
+    /* margin-left: 60px; */
+    height: 30vh;
+    width: 20vw;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(125, 125, 125, 0.603);
+}
+#card5>p {
+    font-size: medium;
+    font-style: italic;
+    color: rgba(33, 33, 33, 0.726);
+    padding-top: 5px;
+}
+#card5>img {
+    padding-bottom: 4px;
+}
+#card5:hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.03);
+}
+#card6 {
+    border: 5px solid #73B9DE;
+    border-radius: 20px;
+    background: rgba(233, 232, 232, 0.93);
+    padding: 20px;
+    /* margin-left: 60px; */
+    height: 30vh;
+    width: 20vw;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(125, 125, 125, 0.603);
+}
+#card6>p {
+    font-size: medium;
+    font-style: italic;
+    color: rgba(33, 33, 33, 0.726);
+    padding-top: 5px;
+}
+#card6>img {
+    padding-bottom: 4px;
+}
+#card6:hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.03);
+}
+#card7 {
+    border: 5px solid #73B9DE;
+    border-radius: 20px;
+    background: rgba(233, 232, 232, 0.93);
+    padding: 20px;
+    /* margin-left: 60px; */
+    height: 30vh;
+    width: 20vw;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(125, 125, 125, 0.603);
+}
+#card7>p {
+    font-size: medium;
+    font-style: italic;
+    color: rgba(33, 33, 33, 0.726);
+    padding-top: 5px;
+}
+#card7>img {
+    padding-bottom: 4px;
+}
+#card7:hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.03);
+}
+#card8 {
+    border: 5px solid #73B9DE;
+    border-radius: 20px;
+    background: rgba(233, 232, 232, 0.93);
+    padding: 20px;
+    /* margin-left: 60px; */
+    height: 30vh;
+    width: 20vw;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(125, 125, 125, 0.603);
+}
+#card8>p {
+    font-size: medium;
+    font-style: italic;
+    color: rgba(33, 33, 33, 0.726);
+    padding-top: 5px;
+}
+#card8>img {
+    padding-bottom: 4px;
+}
+#card8:hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.03);
+}

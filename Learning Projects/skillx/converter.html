@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to JPG & Compression Tool</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #7e7efe;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+        }
+        .container label {
+        font-family: 'Times New Roman', Times, serif; 
+        color: rgb(43, 37, 37);
+        font-weight: bold;
+        font-size: large;
+
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: rgb(16, 0, 17);
+            font-size: 23px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+            width: 100%;
+        }
+        button {
+            background: rgb(160, 119, 196);
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        button:hover {
+            background: rgb(87, 2, 90);
+        }
+        .output {
+            margin-top: 20px;
+        }
+        .download-link {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .download-link:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>File Converter & Compressor</h2>
+
+        <label>Convert PDF to JPG</label>
+        <input type="file" id="pdfInput" accept="application/pdf" >
+        <button onclick="convertPdfToJpg()">Convert</button>
+        <div id="output"></div>
+
+        <label>Compress or Decompress Image</label>
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="compressImage()">Compress Image</button>
+        <button onclick="decompressImage()">Decompress Image</button>
+        <div id="outputSection"></div>
+
+        <div class="output" id="outputSection"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/browser-image-compression/1.0.17/browser-image-compression.min.js"></script>
+    <script src="converter.js"></script>
+</body>
+</html>

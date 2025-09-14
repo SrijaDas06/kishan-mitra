@@ -1,0 +1,46 @@
+/* h1 {
+    text-align: center;
+    color: rgb(5, 99, 232);
+}
+img {
+    height: 300px;
+    width: 580px;
+}
+#photo {
+    padding: 20px;
+    text-align: center;
+} */
+body {
+    background-color: rgb(254, 254, 251);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0 px;
+    padding: 20px;
+}
+h2 {
+    color: brown;
+}
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 60%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+th,td {
+    border: 1 px solid rgb(130, 197, 251);
+    padding: 12px;
+    background-color: rgb(200, 229, 255);
+}
+button {
+    background-color: #121b50;
+    color: aliceblue;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+}
+button:hover {
+    background-color: black;
+}
+input [type = "submit"]:hover {
+    background-color: aquamarine;
+}

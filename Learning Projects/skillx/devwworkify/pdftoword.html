@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pdftoword.css">
+</head>
+<body>
+    <div class="mainbox">
+        <div id="subbox">
+            <h1>Welcome to Dev.Workify.PDF</h1>
+            <h2>Convert Pdf to Word</h2>
+
+            <label for="images" class="drop-container" id="dropcontainer">
+                <span class="drop-title">Drop files here</span>
+                or
+                <input type="file" id="pdfInput" accept="application/pdf">
+            </label>
+            <button id="convertBtn">Convert</button>  <!-- ✅ Corrected ID -->
+            <div id="output"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.0.2/tesseract.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.1/docx.min.js"></script>
+    <script src="pdftoword.js"></script>
+</body>
+</html>

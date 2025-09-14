@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Bio Data</title>
+  <link rel="stylesheet" href="third.css">
+</head>
+<body>
+
+  <h1>Student Bio Data Form</h1>
+
+  <form id="bioForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Enter full name" required>
+
+    <label for="age">Age</label>
+    <input type="number" id="age" placeholder="Enter age" required>
+
+    <label for="class">Class</label>
+    <input type="text" id="class" placeholder="e.g., MSc Cybersecurity" required>
+
+    <label for="subjects">Subjects</label>
+    <input type="text" id="subjects" placeholder="e.g., Networking, Cryptography" required>
+
+    <label for="about">About You</label>
+    <textarea id="about" rows="4" placeholder="Say something about yourself..." required></textarea>
+
+    <button type="button" onclick="generateBio()">Create Bio Data</button>
+  </form>
+
+  <div class="bio-output" id="outputSection" style="display:none;">
+    <h2>📃 Your Bio Data</h2>
+    <p><strong>Name:</strong> <span id="outName"></span></p>
+    <p><strong>Age:</strong> <span id="outAge"></span></p>
+    <p><strong>Class:</strong> <span id="outClass"></span></p>
+    <p><strong>Subjects:</strong> <span id="outSubjects"></span></p>
+    <p><strong>About:</strong> <span id="outAbout"></span></p>
+  </div>
+
+  <div class="quiz-box" id="quizBox" style="display:none;">
+    <h2>Brain Buster Quiz</h2>
+    <div id="quiz">
+      <div class="question" id="questionText"></div>
+      <div class="option">
+        <input type="radio" name="option" id="opt1" value="0">
+        <label for="opt1" id="label1"></label>
+      </div>
+      <div class="option">
+        <input type="radio" name="option" id="opt2" value="1">
+        <label for="opt2" id="label2"></label>
+      </div>
+      <div class="option">
+        <input type="radio" name="option" id="opt3" value="2">
+        <label for="opt3" id="label3"></label>
+      </div>
+      <div class="option">
+        <input type="radio" name="option" id="opt4" value="3">
+        <label for="opt4" id="label4"></label>
+      </div>
+      <div class="option">
+        <input type="radio" name="option" id="opt5" value="4">
+        <label for="opt5" id="label5"></label>
+      </div>
+
+      <button onclick="nextQuestion()">Next</button>
+      <div class="result" id="resultBox"></div>
+    </div>
+  </div>
+
+  <script>
+    // Student Bio Function
+    function generateBio() {
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+      const studentClass = document.getElementById("class").value;
+      const subjects = document.getElementById("subjects").value;
+      const about = document.getElementById("about").value;
+
+      document.getElementById("outName").innerText = name;
+      document.getElementById("outAge").innerText = age;
+      document.getElementById("outClass").innerText = studentClass;
+      document.getElementById("outSubjects").innerText = subjects;
+      document.getElementById("outAbout").innerText = about;
+
+      // Show output section and quiz, hide form
+      document.getElementById("outputSection").style.display = "block";
+      document.getElementById("quizBox").style.display = "block";
+      document.getElementById("bioForm").style.display = "none";
+
+      loadQuestion(); // Start the quiz
+    }
+
+    // Quiz Questions
+    const questions = [
+      {
+        question: "Which language runs in a web browser?",
+        options: ["Java", "C", "Python", "JavaScript", "C++"],
+        answer: 3
+      },
+      {
+        question: "What does CSS stand for?",
+        options: ["Central Style Sheets", "Cascading Style Sheets", "Coded Style Syntax", "Creative Style System", "CSS"],
+        answer: 1
+      },
+      {
+        question: "Which HTML tag is used for JavaScript?",
+        options: ["<js>", "<javascript>", "<script>", "<code>", "<link>"],
+        answer: 2
+      },
+      {
+        question: "Which HTML tag is used for CSS?",
+        options: ["<js>", "<javascript>", "<script>", "<code>", "<link>"],
+        answer: 4
+      },
+      {
+        question: "Which HTML tag is used to make text bold?",
+        options: ["<CSS>", "<italic>", "<script>", "<code>", "<strong>"],
+        answer: 4
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const q = questions[currentQuestion];
+      document.getElementById("questionText").innerText = `Q${currentQuestion + 1}: ${q.question}`;
+      document.getElementById("label1").innerText = q.options[0];
+      document.getElementById("label2").innerText = q.options[1];
+      document.getElementById("label3").innerText = q.options[2];
+      document.getElementById("label4").innerText = q.options[3];
+      document.getElementById("label5").innerText = q.options[4];
+
+      const options = document.getElementsByName("option");
+      options.forEach(opt => opt.checked = false);
+    }
+
+    function nextQuestion() {
+      const selectedOption = document.querySelector('input[name="option"]:checked');
+      if (!selectedOption) {
+        alert("Please select an option!");
+        return;
+      }
+
+      const answer = parseInt(selectedOption.value);
+      if (answer === questions[currentQuestion].answer) {
+        score++;
+      }
+
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz").innerHTML = `
+          <h2>Quiz Finished</h2>
+          <p class="result">You scored ${score} out of ${questions.length}</p>
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html> 
+
+
